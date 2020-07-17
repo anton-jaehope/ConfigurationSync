@@ -6,14 +6,51 @@
 " @author         Junho Jin, JAEHO LEE
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" VIM8 package configuration
-set packpath+=~/.vim/pack/
-set t_Co=256
+""" pathogen
+execute pathogen#infect()
+
+"" Custom
+
+" Search down into subfolders
+" provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" NOW WE CAN :
+"  - Hit tab to :find by partial match
+"  Use * to make it fuzzy
+
+" Thigns to consider
+" - :b lets you autocomplete any open buffer
+
+
+" TAG JUMPING:
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" NOW WE CAN:
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tag
+" - Use ^t to jump back up the tag stack
+
+" THINGS TO CONSIDER:
+" - This doesn't help if you want a visual list of tags.
 
 """ Indentation configuration
 filetype indent on                      " enable indentation rules that are file-type specific
 set autoindent                          " new lines inherit the indentation of previous lines
-colorscheme github
+set relativenumber
+
+" use a slightly darker background, like GitHub inline code blocks
+let g:github_colors_soft = 1
+
+" more blocky diff markers in signcolumn (e.g. GitGutter)
+let g:github_colors_block_diffmark = 0
+
+colorscheme blazer
 
 """ Tab/Space and Shifts configuration
 set shiftwidth=2                        " when shifting, indent using two spaces
@@ -30,7 +67,7 @@ set incsearch                           " incremental search that shows partial 
 set smartcase                           " automatically switch search to case-sensitive when search query contains an uppercase letter
 
 """ User Interface configuration
-set number                              " show line numbers on the sidebar
+" set number                              " show line numbers on the sidebar
 " set norelativenumber                    " show line number on the current line and no relative numbers on all other lines
 " set linebreak      		                  " don't break lines by wrapping words
 " set nowrapscan                          " stop searching at the end of file
@@ -95,15 +132,9 @@ set confirm                             " display a confirmation dialog when clo
 
 
 """ Vim Plugin (https://github.com/junegunn/vim-plug)
-" Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
-
-" Declare the list of plugins.
-Plug 'pangloss/vim-javascript'
-Plug 'hashivim/vim-terraform'
-
-" List ends here. Plugins become visible to Vim after this call.
-call plug#end()
+"call pathogen#infect()
+"syntax on
+"filetype plugin indent on
 
 " After adding plugins, reload it (:source ~/.vimrc) or restart Vim.
 " Run :PlugInstall to install the plugins.
@@ -124,7 +155,7 @@ call plug#end()
 " augroup END
 
 " vim-terraform configuration (https://github.com/hashivim/vim-terraform)
-" let g:terraform_align=1
-" let g:terraform_fold_sections=1
-" let g:terraform_fmt_on_save=1
+let g:terraform_align=1
+let g:terraform_fold_sections=1
+let g:terraform_fmt_on_save=1
 

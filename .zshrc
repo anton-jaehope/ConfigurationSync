@@ -1,16 +1,16 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:/Users/anton/Downloads/confluent-5.3.2/etc/kafka/:/Users/anton/Downloads/confluent-5.3.2/bin/:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:/Users/jaylee/Downloads/confluent-5.3.2/etc/kafka/:/Users/jaylee/Downloads/confluent-5.3.2/bin/:$PATH
 export CPPFLAGS=-I/usr/local/opt/openssl/include
 export LDFLAGS=-L/usr/local/opt/openssl/lib
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/anton/.oh-my-zsh"
+export ZSH="/Users/jaylee/.oh-my-zsh"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/"
-export WORKSPACE="/Users/anton/Library/Mobile Documents/com~apple~CloudDocs/workspace"
+export WORKSPACE="/Users/jaylee/Library/Mobile Documents/com~apple~CloudDocs/workspace"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="apple"
+ZSH_THEME="agnoster"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -98,5 +98,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias nrt="npm run test"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
